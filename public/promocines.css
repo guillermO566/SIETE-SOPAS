@@ -1,17 +1,17 @@
-/* --- VARIABLES DE DISEÑO (Estilo Siete Sopas Profesional) --- */
+
 :root {
-    --primary-color: #D35400; /* Naranja Ladrillo */
-    --secondary-color: #E67E22; /* Naranja suave */
-    --text-dark: #2C3E50; /* Gris elegante */
+    --primary-color: #D35400; 
+    --secondary-color: #E67E22; 
+    --text-dark: #2C3E50; 
     --text-light: #7F8C8D; 
-    --bg-warm: #FFF8E1; /* Crema suave */
+    --bg-warm: #FFF8E1; 
     --white: #FFFFFF;
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 15px 35px rgba(211, 84, 0, 0.2);
     --gradient-btn: linear-gradient(45deg, #D35400, #E67E22);
 }
 
-/* --- CONFIGURACIÓN GENERAL --- */
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -31,7 +31,7 @@ h1, h2, h3 {
 
 a { text-decoration: none; transition: all 0.3s ease; }
 
-/* --- HEADER PROFESIONAL --- */
+
 .header-top {
     background-color: var(--white);
     padding: 15px 40px;
@@ -82,7 +82,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
 .header-top nav a:hover, .header-top nav a.active { color: var(--primary-color); }
 .header-top nav a:hover::after, .header-top nav a.active::after { width: 100%; }
 
-/* --- HERO SECTION --- */
+
 .hero-section {
     display: flex;
     justify-content: center;
@@ -106,7 +106,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
     margin-bottom: 35px;
     font-weight: 300;
 }
-/* --- BOTÓN WHATSAPP --- */
+
 .float {
     position: fixed;
     width: 60px;
@@ -211,9 +211,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
     to { opacity: 1; }
 }
 
-/* ====================================================
-   --- ESTILOS NUEVOS PARA PROMOCIONES (GRID & CARDS) --- 
-   ==================================================== */
+
 .promo-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -222,7 +220,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
 
 .promo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivo automático */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
     gap: 40px;
 }
 
@@ -243,7 +241,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
     box-shadow: var(--shadow-hover);
 }
 
-/* Etiqueta Roja (Badge) */
+
 .promo-badge {
     position: absolute;
     top: 20px;
@@ -273,7 +271,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
 }
 
 .promo-card:hover .promo-image img {
-    transform: scale(1.1); /* Efecto Zoom */
+    transform: scale(1.1); 
 }
 
 .promo-details {
@@ -342,7 +340,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
     transform: scale(1.05);
 }
 
-/* --- FOOTER --- */
+
 .footer {
     background-color: #1a1a1a;
     color: #bbb;
@@ -373,7 +371,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
 .footer-social a { font-size: 1.5em; margin-right: 15px; color: white; }
 .footer-bottom { border-top: 1px solid #333; margin-top: 20px; padding-top: 30px; text-align: center; }
 
-/* --- BOTÓN WHATSAPP --- */
+
 .float {
     position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
     background-color: #25d366; color: #FFF; border-radius: 50%;
@@ -388,11 +386,9 @@ a { text-decoration: none; transition: all 0.3s ease; }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* =========================================
-   --- RESPONSIVE "ESTILO PC MINIATURA" --- 
-   ========================================= */
+
 @media (max-width: 768px) {
-    /* 1. Header y Menú Horizontal (Como en PC pero pequeño) */
+    
     .header-top { padding: 10px 5px; }
     
     .header-top nav {
@@ -401,7 +397,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
         justify-content: center;
         align-items: center;
         gap: 5px; 
-        font-size: 0; /* Oculta las barras | */
+        font-size: 0; 
     }
 
     .header-top .header-logo {
@@ -421,7 +417,7 @@ a { text-decoration: none; transition: all 0.3s ease; }
     
     .header-top nav a::after { display: none; }
 
-    /* 2. Ajustes Promociones Móvil */
+   
     .hero-section {
         flex-direction: column; 
         padding: 30px 15px;
@@ -430,11 +426,11 @@ a { text-decoration: none; transition: all 0.3s ease; }
     .hero-content h1 { font-size: 2em; }
     
     .promo-grid {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
+        grid-template-columns: 1fr; 
     }
     .promo-card { max-width: 400px; margin: 0 auto; }
 
-    /* 3. Footer y Botones */
+    
     .footer-content { flex-direction: column; text-align: center; gap: 30px; }
     .float { width: 50px; height: 50px; font-size: 24px; bottom: 15px; right: 15px; }
 }

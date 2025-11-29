@@ -11,7 +11,6 @@
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="header-top">
         <nav>
             <img src="imagenes/logo.png" alt="Logo Siete Sopas" class="header-logo">
@@ -31,13 +30,10 @@
         </div>
     </section>
 
-    <!-- SECCIÓN MAPA INTERACTIVO -->
     <section class="map-section">
         <div class="container">
             <div class="map-card">
-                
-                <!-- SELECTOR DE SEDES -->
-                <div class="sede-selector-container">
+                  <div class="sede-selector-container">
                     <label for="sedeSelect">Elige una sede:</label>
                     <select id="sedeSelect" onchange="cambiarSede()">
                         <option value="sjl">Sede SJL (San Juan de Lurigancho)</option>
@@ -51,21 +47,20 @@
                     </select>
                 </div>
 
-                <!-- INFORMACIÓN DINÁMICA -->
                 <div class="map-info">
                     <h3 id="tituloSede">Siete Sopas - Sede SJL</h3>
                     <p><i class="fa fa-map-marker" style="color: #D35400;"></i> <span id="direccionSede">Av. Próceres de la Independencia 1754, SJL</span></p>
                     <p><i class="fa fa-clock-o" style="color: #D35400;"></i> Abierto 24 Horas</p>
                 </div>
                 
-                <!-- MAPA DINÁMICO -->
+ 
                 <div class="map-responsive">
                     <iframe id="mapaIframe" src="https://maps.google.com/maps?q=Siete%20Sopas%20SJL%20Proceres&t=&z=16&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 
-                <!-- BOTÓN DINÁMICO -->
+   
                 <div class="map-actions" style="margin-top: 20px; text-align: center;">
-                    <!-- Enlace corregido para SJL por defecto -->
+     
                     <a id="botonComoLlegar" href="https://www.google.com/maps/search/?api=1&query=Siete+Sopas+SJL" target="_blank">
                         <button style="background: linear-gradient(45deg, #D35400, #E67E22); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer;">
                             Cómo llegar
@@ -76,7 +71,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-column footer-logo">
@@ -103,12 +98,12 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE WHATSAPP -->
+   
     <a href="https://api.whatsapp.com/send?phone=51935159305&text=Hola Quisiera informacion sobre este plato." class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
     </a>
 
-    <!-- CSS EXTRA -->
+  
     <style>
         .map-section { padding: 60px 20px; background-color: var(--white); }
         .map-card { background-color: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); padding: 40px; max-width: 900px; margin: 0 auto; border: 1px solid rgba(0,0,0,0.05); }
@@ -123,7 +118,7 @@
         #sedeSelect:hover { background-color: #FFF8E1; }
     </style>
 
-    <!-- JAVASCRIPT CON ENLACES REALES CORREGIDOS -->
+    
     <script>
         const sedesData = {
             'sjl': {
@@ -184,7 +179,7 @@
             var titulo = document.getElementById("tituloSede");
             titulo.innerText = info.titulo;
             titulo.style.animation = 'none';
-            titulo.offsetHeight; /* reinicia animación */
+            titulo.offsetHeight; 
             titulo.style.animation = 'fadeIn 0.5s';
             
             document.getElementById("direccionSede").innerText = info.direccion;

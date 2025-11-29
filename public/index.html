@@ -6,14 +6,9 @@
     <title>Siete Sopas - Inicio</title>
     <link rel="stylesheet" href="index.css">
     
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    
-    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- Bootstrap JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -209,15 +204,13 @@
                 <h3>Suscríbete a novedades</h3>
                 <p style="color: #999; font-size: 0.9em; margin-bottom: 15px;">Recibe promociones exclusivas en tu correo.</p>
                 
-                <!-- CAMBIO: Usamos FormSubmit para evitar el bloqueo de Render -->
             <form action="https://formsubmit.co/guillermowq76@gmail.com" method="POST" class="subscribe-form">
     
-    <!-- Configuración para que vuelva a tu página después de enviar -->
                <input type="hidden" name="_next" value="https://siete-sopas.onrender.com">
                <input type="hidden" name="_subject" value="Nueva suscripción Siete Sopas">
               <input type="hidden" name="_captcha" value="false">
 
-    <!-- Tus campos normales -->
+ 
              <input type="email" name="email" placeholder="Ingresa tu correo" required>
             <button type="submit">Suscribirme</button>
           </form>

@@ -1,10 +1,10 @@
-/* --- VARIABLES DE DISEÑO (Estilo Siete Sopas Profesional) --- */
+
 :root {
-    --primary-color: #D35400; /* Naranja Ladrillo */
-    --secondary-color: #E67E22; /* Naranja suave */
-    --text-dark: #2C3E50; /* Gris elegante */
+    --primary-color: #D35400; 
+    --secondary-color: #E67E22; 
+    --text-dark: #2C3E50; 
     --text-light: #7F8C8D; 
-    --bg-warm: #FFF8E1; /* Crema suave */
+    --bg-warm: #FFF8E1; 
     --white: #FFFFFF;
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 15px 35px rgba(211, 84, 0, 0.2);
@@ -12,7 +12,7 @@
     --gradient-btn: linear-gradient(45deg, #D35400, #E67E22);
 }
 
-/* --- CONFIGURACIÓN GENERAL --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -52,7 +52,7 @@ a {
     color: inherit;
 }
 
-/* --- HEADER PROFESIONAL --- */
+
 .header-top {
     background-color: var(--white);
     padding: 15px 40px;
@@ -111,7 +111,7 @@ a {
     width: 100%;
 }
 
-/* --- HERO SECTION --- */
+
 .hero-section {
     display: flex;
     justify-content: center;
@@ -176,7 +176,7 @@ a {
     box-shadow: 20px 20px 0px rgba(211, 84, 0, 0.1);
 }
 
-/* --- ESTILOS ESPECÍFICOS DE LA PÁGINA HISTORIA --- */
+
 .history-page {
     padding-bottom: 50px;
 }
@@ -299,9 +299,9 @@ a {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* --- FOOTER (CORREGIDO PARA LOGO ORIGINAL) --- */
+
 .footer {
-    background-color: #1a1a1a; /* Fondo oscuro */
+    background-color: #1a1a1a; 
     color: #bbb;
     padding: 80px 20px 30px;
 }
@@ -313,13 +313,9 @@ a {
     justify-content: space-between;
 }
 
-/* 
-   AQUÍ ESTÁ LA CORRECCIÓN DEL LOGO:
-   1. background-color: transparent (Quita el cuadro blanco)
-   2. filter: none (Asegura que se vean el ROJO y VERDE originales)
-*/
+
 .footer-logo img {
-    max-width: 160px; /* Un poco más grande para que destaque */
+    max-width: 160px; 
     height: auto;
     background-color: transparent; 
     padding: 0; 
@@ -377,7 +373,7 @@ a {
     text-align: center;
 }
 
-/* --- BOTÓN WHATSAPP --- */
+
 .float {
     position: fixed;
     width: 60px;
@@ -420,11 +416,9 @@ a {
     to { opacity: 1; }
 }
 
-/* =========================================
-   --- RESPONSIVE (CELULARES) --- 
-   ========================================= */
+
 @media (max-width: 768px) {
-    /* 1. Header */
+    
     .header-top { 
         padding: 10px 5px; 
     }
@@ -461,7 +455,7 @@ a {
         display: none;
     }
 
-    /* 2. Hero */
+    
     .hero-section {
         flex-direction: column; 
         padding: 30px 15px;
@@ -485,7 +479,7 @@ a {
         margin: 0 auto;
     }
 
-    /* 3. Ajustes Historia y Generales */
+    
     .about-content, 
     .footer-content {
         flex-direction: column;
@@ -495,10 +489,10 @@ a {
     }
 
     .milestone-grid, .gallery-grid {
-        grid-template-columns: 1fr; /* Una columna en móvil */
+        grid-template-columns: 1fr; 
     }
 
-    /* 4. Botón WhatsApp */
+   
     .float {
         width: 50px;
         height: 50px;

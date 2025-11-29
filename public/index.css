@@ -1,16 +1,16 @@
-/* --- VARIABLES DE DISEÑO (Estilo Siete Sopas Profesional) --- */
+
 :root {
-    --primary-color: #D35400; /* Naranja Ladrillo */
-    --secondary-color: #E67E22; /* Naranja suave */
-    --text-dark: #2C3E50; /* Gris elegante */
+    --primary-color: #D35400;
+    --secondary-color: #E67E22; 
+    --text-dark: #2C3E50; 
     --text-light: #7F8C8D; 
-    --bg-warm: #FFF8E1; /* Crema suave */
+    --bg-warm: #FFF8E1; 
     --white: #FFFFFF;
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 15px 35px rgba(211, 84, 0, 0.2);
 }
 
-/* --- CONFIGURACIÓN GENERAL --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +37,7 @@ a {
     transition: all 0.3s ease;
 }
 
-/* --- HEADER PROFESIONAL --- */
+
 .header-top {
     background-color: var(--white);
     padding: 15px 40px;
@@ -95,7 +95,7 @@ a {
     width: 100%;
 }
 
-/* --- HERO SECTION --- */
+
 .hero-section {
     display: flex;
     justify-content: center;
@@ -159,13 +159,13 @@ a {
     box-shadow: 20px 20px 0px rgba(211, 84, 0, 0.1);
 }
 
-/* --- TU CARRUSEL ORIGINAL (MEJORADO VISUALMENTE) --- */
+
 .carousel-section {
     background-color: #fff;
     padding: 40px 0;
     text-align: center;
 }
-/* Bootstrap Carousel Specific Styles */
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 60%;
@@ -223,7 +223,7 @@ a {
     line-height: 1.7;
 }
 
-/* --- TESTIMONIOS --- */
+
 .testimonials-section {
     background-color: #FAFAFA;
     padding: 100px 20px;
@@ -306,7 +306,7 @@ a {
     color: var(--text-dark);
 }
 
-/* --- FOOTER --- */
+
 .footer {
     background-color: #1a1a1a;
     color: #bbb;
@@ -369,7 +369,7 @@ a {
     text-align: center;
 }
 
-/* --- BOTÓN WHATSAPP --- */
+
 .float {
     position: fixed;
     width: 60px;
@@ -402,7 +402,7 @@ a {
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* --- ANIMACIONES --- */
+
 @keyframes slideInLeft {
     from { opacity: 0; transform: translateX(-50px); }
     to { opacity: 1; transform: translateX(0); }
@@ -413,11 +413,9 @@ a {
     to { opacity: 1; }
 }
 
-/* =========================================
-   --- RESPONSIVE "ESTILO PC MINIATURA" --- 
-   ========================================= */
+
 @media (max-width: 768px) {
-    /* 1. Header y Menú Horizontal */
+   
     .header-top { 
         padding: 10px 5px; 
     }
@@ -454,7 +452,7 @@ a {
         display: none;
     }
 
-    /* 2. Hero Section */
+    
     .hero-section {
         flex-direction: column; 
         padding: 30px 15px;
@@ -478,7 +476,7 @@ a {
         margin: 0 auto;
     }
 
-    /* 3. Ajustes Generales */
+    
     .carousel-section { padding: 20px 0; }
     
     .about-content {
@@ -487,38 +485,38 @@ a {
         text-align: center;
     }
 
-    /* --- CORRECCIÓN TESTIMONIOS (Estilo Horizontal con Swipe) --- */
+   
     .testimonials-section {
-        padding: 40px 10px; /* Reducimos padding general */
+        padding: 40px 10px; 
     }
 
     .testimonials-container {
         display: flex;
-        flex-direction: row; /* Forzamos la fila horizontal */
-        flex-wrap: nowrap; /* IMPORTANTE: Evita que bajen de línea */
-        overflow-x: auto; /* Permite deslizar a los lados con el dedo */
-        justify-content: flex-start; /* Alinea al inicio para permitir scroll */
-        gap: 15px; /* Espacio entre tarjetas */
-        padding-bottom: 20px; /* Espacio para la barra de desplazamiento */
-        -webkit-overflow-scrolling: touch; /* Suavidad en iPhone */
-        scroll-snap-type: x mandatory; /* Efecto magnético al deslizar */
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
+        justify-content: flex-start; 
+        gap: 15px;
+        padding-bottom: 20px; 
+        -webkit-overflow-scrolling: touch; 
+        scroll-snap-type: x mandatory;
     }
     
     .testimonial-card {
-        /* Tamaño fijo más pequeño para que entren en pantalla */
+       
         min-width: 260px; 
         width: 260px;
-        flex: 0 0 auto; /* Evita que se estiren o encojan */
-        padding: 20px; /* Menos relleno interno */
+        flex: 0 0 auto; 
+        padding: 20px; 
         margin: 0;
-        scroll-snap-align: center; /* Centra la tarjeta al soltar */
+        scroll-snap-align: center; 
     }
 
     .testimonial-text {
-        font-size: 0.9em; /* Letra un poco más pequeña */
+        font-size: 0.9em; 
     }
 
-    /* Ocultar barra de scroll fea pero mantener funcionalidad */
+    
     .testimonials-container::-webkit-scrollbar {
         height: 6px;
     }
@@ -527,7 +525,7 @@ a {
         border-radius: 10px;
     }
 
-    /* 4. Footer y Botón */
+    
     .footer-content {
         flex-direction: column;
         text-align: center;
