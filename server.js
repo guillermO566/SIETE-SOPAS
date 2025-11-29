@@ -21,15 +21,15 @@ app.post("/suscribir", async (req, res) => {
       return res.status(500).send("Error de configuración en el servidor");
   }
 
+ // CONFIGURACIÓN CORREGIDA PARA RENDER (PUERTO 465)
   let transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",  // Usamos el servidor directo de Gmail
+    port: 465,               // Puerto seguro SSL (El 587 suele fallar en Render)
+    secure: true,            // Obligatorio true para el puerto 465
     auth: {
       user: process.env.CORREO_USER,
       pass: process.env.CORREO_PASS
-    },
-    // Esto ayuda a evitar problemas de seguridad en servidores nube
-    tls: {
-      rejectUnauthorized: false
+      
     }
   });
 
