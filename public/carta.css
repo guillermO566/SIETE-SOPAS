@@ -1,16 +1,17 @@
-/* --- VARIABLES DE DISEÑO (Estilo Siete Sopas Profesional) --- */
+
 :root {
-    --primary-color: #D35400; /* Naranja Ladrillo */
-    --secondary-color: #E67E22; /* Naranja suave */
-    --text-dark: #2C3E50; /* Gris elegante */
+
+    --primary-color: #D35400;
+    --secondary-color: #E67E22;
+    --text-dark: #2C3E50;
     --text-light: #7F8C8D; 
-    --bg-warm: #FFF8E1; /* Crema suave */
+    --bg-warm: #FFF8E1;
     --white: #FFFFFF;
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
     --shadow-hover: 0 15px 35px rgba(211, 84, 0, 0.2);
 }
 
-/* --- CONFIGURACIÓN GENERAL --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -27,7 +28,7 @@ body {
     overflow-x: hidden; 
 }
 
-/* Tipografías elegantes */
+
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -40,7 +41,7 @@ a {
     color: inherit;
 }
 
-/* --- HEADER PROFESIONAL (Igual al Inicio) --- */
+
 .header-top {
     background-color: var(--white);
     padding: 15px 40px;
@@ -100,16 +101,16 @@ a {
     width: 100%;
 }
 
-/* --- CONTENEDOR PRINCIPAL --- */
+
 .wrap {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-/* --- TÍTULOS DE SECCIÓN (Mejorados) --- */
+
 .wrap-title-section h2 {
-    font-size: 2.5em; /* Más grande y elegante */
+    font-size: 2.5em;
     margin: 40px 0 30px;
     color: var(--primary-color);
     text-align: left;
@@ -120,14 +121,14 @@ a {
     letter-spacing: 1px;
 }
 
-/* --- GRID PARA PRODUCTOS (Carta) --- */
+
 .column-2.carta {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en PC */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
 
-/* --- TARJETA INDIVIDUAL (Plato) --- */
+
 .plato-carta {
     display: flex;
     align-items: center;
@@ -144,24 +145,24 @@ a {
     box-shadow: var(--shadow-hover);
 }
 
-/* IMAGEN DEL PLATO */
+
 .img-plato-carta {
     flex-basis: 35%;
     display: flex;
     justify-content: center;
     padding: 10px;
-    background: #FFF3E0; /* Fondo naranja muy suave */
+    background: #FFF3E0;
 }
 
 .img-plato-carta img {
     max-width: 130px;
     max-height: 130px;
-    border-radius: 50%; /* Imagen redonda estilo plato */
+    border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* TEXTO DEL PLATO */
+
 .div-plato-carta {
     flex-basis: 45%;
     padding: 15px 20px;
@@ -182,7 +183,7 @@ a {
     line-height: 1.4;
 }
 
-/* PRECIO */
+
 .precio-plato-carta {
     flex-basis: 20%;
     display: flex;
@@ -200,7 +201,7 @@ a {
     border-radius: 20px;
 }
 
-/* --- FOOTER (Igual al Inicio) --- */
+
 .footer {
     background-color: #1a1a1a;
     color: #bbb;
@@ -228,7 +229,7 @@ a {
     text-align: center;
 }
 
-/* --- BOTÓN WHATSAPP --- */
+
 .float {
     position: fixed;
     width: 60px;
@@ -253,11 +254,9 @@ a {
     transform: scale(1.1);
 }
 
-/* =========================================
-   --- RESPONSIVE "ESTILO PC MINIATURA" --- 
-   ========================================= */
+
 @media (max-width: 780px) {
-    /* 1. Header y Menú Horizontal (Pequeño) */
+ 
     .header-top { 
         padding: 10px 5px; 
     }
@@ -268,7 +267,7 @@ a {
         justify-content: center;
         align-items: center;
         gap: 5px; 
-        font-size: 0; /* Oculta las barras | */
+        font-size: 0;
     }
 
     .header-top .header-logo {
@@ -281,7 +280,7 @@ a {
     }
 
     .header-top nav a {
-        font-size: 11px; /* Letra pequeña */
+        font-size: 11px;
         margin-left: 2px;
         margin-right: 2px;
         font-weight: 600;
@@ -294,16 +293,15 @@ a {
         display: none;
     }
 
-    /* 2. Grid de la Carta (1 Columna en móvil) */
+
     .column-2.carta {
-        grid-template-columns: 1fr; /* Una sola columna para que se vea bien */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    /* 3. Tarjeta de Plato (Ajuste Móvil) */
-    .plato-carta {
-        /* Mantenemos flex-row para que la foto esté al lado del texto, 
-           es más elegante que uno encima del otro en menús */
+
+    
+.plato-carta {
         padding: 10px;
     }
 
