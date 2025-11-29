@@ -209,10 +209,15 @@
                 <h3>Suscríbete a novedades</h3>
                 <p style="color: #999; font-size: 0.9em; margin-bottom: 15px;">Recibe promociones exclusivas en tu correo.</p>
                 
-                <form action="/suscribir" method="POST" class="subscribe-form">
-                    <input type="email" name="correo" placeholder="Ingresa tu correo" required>
-                    <button type="submit">Suscribirme</button>
-                </form>
+        <form action="https://formsubmit.co/guillermowq76@gmail.com" method="POST" class="subscribe-form">
+    
+    <!-- Esto hace que al terminar vuelva a tu página automáticamente -->
+             <input type="hidden" name="_next" value="https://siete-sopas.onrender.com">
+             <input type="hidden" name="_subject" value="Nueva suscripción Siete Sopas">
+    
+            <input type="email" name="email" placeholder="Ingresa tu correo" required>
+             <button type="submit">Suscribirme</button>
+        </form>
             </div>
         </div>
 
