@@ -47,7 +47,7 @@
         <div class="container">
             <br>
             <div id="theCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicadores -->
+    
                 <ol class="carousel-indicators">
                   <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
                   <li data-target="#theCarousel" data-slide-to="1"></li>
@@ -116,7 +116,7 @@
         <h2>Testimonios de clientes</h2>
         <div class="testimonials-container">
             
-            <!-- Testimonio 1 (Existente) -->
+
             <div class="testimonial-card">
                 <p class="testimonial-text">Riquísimo es un lugar que tienes que probar. Nos lo recomendaron mucho y estaba muy cerca de nuestro hotel. El pan ufffff es el mejor del mundo, las sopas muy ricas, los platillos son abundantes en ocasiones alcanza hasta para 2 personas</p>
                 <div class="author-info">
@@ -130,7 +130,7 @@
                 </div>
             </div>
 
-            <!-- Testimonio 2 (Existente) -->
+
             <div class="testimonial-card">
                 <p class="testimonial-text">De lo más contundente que he probado hasta ahora en Lima, los platos son para compartir. La sopa criolla exquisita, recomendado!!</p>
                 <div class="author-info">
@@ -144,7 +144,7 @@
                 </div>
             </div>
 
-            <!-- Testimonio 3 (Nuevo - Enfoque en Caldo de Gallina) -->
+
             <div class="testimonial-card">
                 <p class="testimonial-text">¡La espera valió totalmente la pena! El Caldo de Gallina es espectacular, con ese saborcito casero que te levanta el ánimo. La atención fue rápida a pesar de la gente. Volveré definitivamente por ese pancito recién horneado.</p>
                 <div class="author-info">
@@ -158,7 +158,7 @@
                 </div>
             </div>
 
-            <!-- Testimonio 4 (Nuevo - Enfoque en Menestrón/Tradición) -->
+
             <div class="testimonial-card">
                 <p class="testimonial-text">Fui con mi familia un domingo y quedamos encantados. Pedí el Menestrón y me recordó a la sazón de mi abuela. Las porciones son gigantes, así que vayan con hambre. Un ambiente 10/10 para compartir.</p>
                 <div class="author-info">
@@ -172,7 +172,7 @@
                 </div>
             </div>
 
-            <!-- Testimonio 5 (Nuevo - Enfoque en Servicio) -->
+
             <div class="testimonial-card">
                 <p class="testimonial-text">Excelente servicio y calidad. A pesar de que el local estaba lleno, los mozos fueron muy amables. La Sopa Criolla con carne picada es mi favorita. ¡No se olviden de pedir la chicha morada!</p>
                 <div class="author-info">
@@ -189,10 +189,10 @@
         </div>
     </section>
 
-    <!-- FOOTER MODIFICADO CON FORMULARIO -->
+
     <footer class="footer">
         <div class="footer-content">
-            <!-- Columna 1: Logo y Redes -->
+
             <div class="footer-column footer-logo">
                 <img src="imagenes/logo.png" alt="Logo Footer">
                 <ul class="footer-social-list" style="list-style: none; padding: 0;"> 
@@ -204,12 +204,12 @@
                 </ul>
             </div>
 
-            <!-- Columna 2: Formulario de Suscripción (BACKEND INTEGRADO) -->
+
             <div class="footer-column footer-subscribe">
                 <h3>Suscríbete a novedades</h3>
                 <p style="color: #999; font-size: 0.9em; margin-bottom: 15px;">Recibe promociones exclusivas en tu correo.</p>
                 
-                <form action="http://localhost:3000/suscribir" method="POST" class="subscribe-form">
+                <form action="/suscribir" method="POST" class="subscribe-form">
                     <input type="email" name="correo" placeholder="Ingresa tu correo" required>
                     <button type="submit">Suscribirme</button>
                 </form>
@@ -221,12 +221,12 @@
         </div>
     </footer>
 
-    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+
     <a href="https://api.whatsapp.com/send?phone=51935159305&text=Hola Quisiera informacion sobre este plato." class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
     </a>
 
-    <!-- CSS RÁPIDO PARA EL FORMULARIO (Agrégalo a tu inicio.css si prefieres) -->
+   
     <style>
         .footer-subscribe {
             max-width: 400px;
@@ -258,7 +258,7 @@
         .subscribe-form button:hover {
             transform: scale(1.05);
         }
-        /* Ajuste para móvil */
+  
         @media (max-width: 768px) {
             .footer-subscribe {
                 text-align: center;
