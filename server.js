@@ -1,66 +1,75 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
-const path = require("path");
 const app = express();
 
-// Configuración básica para recibir datos del formulario
+// Configuración básica
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public")); // Carpeta donde está tu html e imagenes
+app.use(express.static("public"));
 
-// RUTA PARA SUSCRIBIRSE
 app.post("/suscribir", async (req, res) => {
-  console.log("1. Intento de suscripción recibido"); 
-  
+  console.log("1. Iniciando proceso de suscripción...");
   const correoCliente = req.body.correo;
-  console.log("2. Correo a suscribir:", correoCliente);
 
-  // CONFIGURACIÓN DEL CORREO (NODEMAILER)
-  // Usamos el puerto 465 y una configuración especial para que no se cuelgue
+  // VERIFICACIÓN DE VARIABLES (Para que sepas si Render las leyó bien)
+  if (!process.env.CORREO_USER || !process.env.CORREO_PASS) {
+      console.error("ERROR CRÍTICO: Faltan las variables en Render (Environment)");
+      return res.status(500).send("Error interno de configuración.");
+  }
+
+  // INTENTO DE CONEXIÓN USANDO PUERTO 587 (STARTTLS)
+  // Esta es la alternativa cuando el puerto 465 falla por Timeout
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 465,
-    secure: true, // Usar conexión segura
+    port: 587, 
+    secure: false, // OJO: Para el puerto 587 esto TIENE que ser false
+    requireTLS: true, // Obligamos a usar seguridad
     auth: {
       user: process.env.CORREO_USER,
       pass: process.env.CORREO_PASS
     },
     tls: {
-      // ESTA ES LA MAGIA: Le dice al servidor que no sea tan estricto con la seguridad
-      // Ayuda a evitar el error "Timeout" en Render
-      rejectUnauthorized: false
-    }
+      rejectUnauthorized: false // Permite pasar aunque el certificado sea estricto
+    },
+    connectionTimeout: 10000 // Esperar máximo 10 segundos
   });
 
   try {
-    console.log("3. Intentando conectar con Gmail..."); 
+    console.log("2. Intentando conectar con Gmail (Puerto 587)...");
     
-    // Enviamos el correo
+    // Verificamos la conexión antes de enviar (esto nos dará más detalles en el log)
+    await transporter.verify();
+    console.log("3. ¡Conexión con Gmail exitosa! Enviando correo...");
+
     await transporter.sendMail({
-      from: "Suscripciones Siete Sopas", // Nombre que saldrá
-      to: process.env.CORREO_USER,       // Te llega a ti mismo
-      subject: "¡Nueva suscripción!",
-      text: `Hola, el usuario con correo ${correoCliente} se quiere suscribir.`
+      from: "Suscripciones Siete Sopas",
+      to: process.env.CORREO_USER,
+      subject: "Nueva suscripción web",
+      text: `El usuario ${correoCliente} se ha suscrito.`
     });
 
-    console.log("4. ¡Correo enviado exitosamente!"); 
+    console.log("4. ¡Correo enviado!");
     
-    // Respuesta para el usuario (lo que ve en pantalla)
     res.send(`
-      <div style="text-align:center; padding: 50px; font-family: sans-serif;">
-        <h1>¡Gracias por suscribirte!</h1>
-        <p>Hemos recibido tu correo: <b>${correoCliente}</b></p>
+      <div style="font-family: sans-serif; text-align: center; margin-top: 50px;">
+        <h1 style="color: #e67e22;">¡Suscripción Exitosa!</h1>
+        <p>Gracias por unirte. Hemos registrado tu correo: <b>${correoCliente}</b></p>
         <br>
-        <a href="/" style="background: orange; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Volver al inicio</a>
+        <a href="/" style="background: black; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Volver al Restaurante</a>
       </div>
     `);
 
   } catch (error) {
-    console.error("5. ERROR FATAL:", error);
-    res.status(500).send("Hubo un error al enviar el correo. Intenta más tarde.");
+    console.error("5. ERROR AL ENVIAR:", error);
+    // Mostramos el error en pantalla para que sepas qué pasó sin ir a los logs
+    res.status(500).send(`
+      <h1>Ups, hubo un error</h1>
+      <p>El servidor dijo: ${error.message}</p>
+      <p>Código de error: ${error.code}</p>
+      <a href="/">Volver a intentar</a>
+    `);
   }
 });
 
-// INICIAR SERVIDOR
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor listo en el puerto ${PORT}`));
+app.listen(PORT, () => console.log(`Servidor activo en puerto ${PORT}`));
