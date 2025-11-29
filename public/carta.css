@@ -1,0 +1,343 @@
+/* --- VARIABLES DE DISEÑO (Estilo Siete Sopas Profesional) --- */
+:root {
+    --primary-color: #D35400; /* Naranja Ladrillo */
+    --secondary-color: #E67E22; /* Naranja suave */
+    --text-dark: #2C3E50; /* Gris elegante */
+    --text-light: #7F8C8D; 
+    --bg-warm: #FFF8E1; /* Crema suave */
+    --white: #FFFFFF;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 15px 35px rgba(211, 84, 0, 0.2);
+}
+
+/* --- CONFIGURACIÓN GENERAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-warm);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+/* Tipografías elegantes */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #5D4037;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+/* --- HEADER PROFESIONAL (Igual al Inicio) --- */
+.header-top {
+    background-color: var(--white);
+    padding: 15px 40px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-top .header-logo {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-top .header-logo:hover {
+    transform: scale(1.05);
+}
+
+.header-top nav a {
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 25px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.header-top nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.header-top nav a:hover,
+.header-top nav a.active {
+    color: var(--primary-color);
+}
+
+.header-top nav a:hover::after,
+.header-top nav a.active::after {
+    width: 100%;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* --- TÍTULOS DE SECCIÓN (Mejorados) --- */
+.wrap-title-section h2 {
+    font-size: 2.5em; /* Más grande y elegante */
+    margin: 40px 0 30px;
+    color: var(--primary-color);
+    text-align: left;
+    border-left: 6px solid var(--secondary-color);
+    padding-left: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- GRID PARA PRODUCTOS (Carta) --- */
+.column-2.carta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en PC */
+    gap: 2rem;
+}
+
+/* --- TARJETA INDIVIDUAL (Plato) --- */
+.plato-carta {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.plato-carta:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* IMAGEN DEL PLATO */
+.img-plato-carta {
+    flex-basis: 35%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: #FFF3E0; /* Fondo naranja muy suave */
+}
+
+.img-plato-carta img {
+    max-width: 130px;
+    max-height: 130px;
+    border-radius: 50%; /* Imagen redonda estilo plato */
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* TEXTO DEL PLATO */
+.div-plato-carta {
+    flex-basis: 45%;
+    padding: 15px 20px;
+}
+
+.div-plato-carta h4 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #5D4037;
+    margin-bottom: 5px;
+}
+
+.div-plato-carta p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #777;
+    line-height: 1.4;
+}
+
+/* PRECIO */
+.precio-plato-carta {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+}
+
+.precio-plato-carta span {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--primary-color);
+    background: #FFF3E0;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* --- FOOTER (Igual al Inicio) --- */
+.footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    padding: 60px 20px 30px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-width: 120px;
+    filter: brightness(0) invert(1); 
+    margin-bottom: 20px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* --- BOTÓN WHATSAPP --- */
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+/* =========================================
+   --- RESPONSIVE "ESTILO PC MINIATURA" --- 
+   ========================================= */
+@media (max-width: 780px) {
+    /* 1. Header y Menú Horizontal (Pequeño) */
+    .header-top { 
+        padding: 10px 5px; 
+    }
+    
+    .header-top nav {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center;
+        gap: 5px; 
+        font-size: 0; /* Oculta las barras | */
+    }
+
+    .header-top .header-logo {
+        height: 40px; 
+        margin-right: 0;
+        margin-bottom: 5px;
+        display: block;
+        width: 100%; 
+        object-fit: contain;
+    }
+
+    .header-top nav a {
+        font-size: 11px; /* Letra pequeña */
+        margin-left: 2px;
+        margin-right: 2px;
+        font-weight: 600;
+        padding-bottom: 2px;
+        display: inline-block;
+        border-bottom: none;
+    }
+    
+    .header-top nav a::after {
+        display: none;
+    }
+
+    /* 2. Grid de la Carta (1 Columna en móvil) */
+    .column-2.carta {
+        grid-template-columns: 1fr; /* Una sola columna para que se vea bien */
+        gap: 1.5rem;
+    }
+
+    /* 3. Tarjeta de Plato (Ajuste Móvil) */
+    .plato-carta {
+        /* Mantenemos flex-row para que la foto esté al lado del texto, 
+           es más elegante que uno encima del otro en menús */
+        padding: 10px;
+    }
+
+    .img-plato-carta {
+        flex-basis: 30%;
+        padding: 5px;
+        background: transparent;
+    }
+    
+    .img-plato-carta img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .div-plato-carta {
+        flex-basis: 50%;
+        padding: 0 10px;
+    }
+
+    .div-plato-carta h4 {
+        font-size: 1.1em;
+    }
+    
+    .div-plato-carta p {
+        font-size: 0.85em;
+    }
+
+    .precio-plato-carta {
+        flex-basis: 20%;
+        padding-right: 0;
+    }
+    
+    .precio-plato-carta span {
+        font-size: 1.1em;
+        padding: 3px 8px;
+    }
+}

@@ -1,0 +1,440 @@
+/* --- VARIABLES DE DISEÑO (Estilo Siete Sopas Profesional) --- */
+:root {
+    --primary-color: #D35400; /* Naranja Ladrillo */
+    --secondary-color: #E67E22; /* Naranja suave */
+    --text-dark: #2C3E50; /* Gris elegante */
+    --text-light: #7F8C8D; 
+    --bg-warm: #FFF8E1; /* Crema suave */
+    --white: #FFFFFF;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 15px 35px rgba(211, 84, 0, 0.2);
+    --gradient-btn: linear-gradient(45deg, #D35400, #E67E22);
+}
+
+/* --- CONFIGURACIÓN GENERAL --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-warm); 
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #5D4037;
+    margin-bottom: 20px;
+}
+
+a { text-decoration: none; transition: all 0.3s ease; }
+
+/* --- HEADER PROFESIONAL --- */
+.header-top {
+    background-color: var(--white);
+    padding: 15px 40px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-top .header-logo {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-top .header-logo:hover { transform: scale(1.05); }
+
+.header-top nav a {
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 25px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.header-top nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s;
+}
+
+.header-top nav a:hover, .header-top nav a.active { color: var(--primary-color); }
+.header-top nav a:hover::after, .header-top nav a.active::after { width: 100%; }
+
+/* --- HERO SECTION --- */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 100%);
+    padding: 80px 20px;
+    min-height: 80vh;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    line-height: 1.2;
+    color: #D35400;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hero-content p {
+    font-size: 1.25em;
+    color: #555;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+/* --- BOTÓN WHATSAPP --- */
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: white;
+}
+.footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    padding: 80px 20px 30px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #bbb;
+    font-size: 1em;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.footer-social a {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: white;
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    padding-top: 30px;
+    font-size: 0.85em;
+    opacity: 0.6;
+    text-align: center;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* --- ANIMACIONES --- */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ====================================================
+   --- ESTILOS NUEVOS PARA PROMOCIONES (GRID & CARDS) --- 
+   ==================================================== */
+.promo-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivo automático */
+    gap: 40px;
+}
+
+.promo-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Etiqueta Roja (Badge) */
+.promo-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.9em;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    z-index: 10;
+}
+
+.promo-image {
+    width: 100%;
+    height: 250px;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.promo-card:hover .promo-image img {
+    transform: scale(1.1); /* Efecto Zoom */
+}
+
+.promo-details {
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.promo-details h3 {
+    font-size: 1.6em;
+    color: #5D4037;
+    margin-bottom: 10px;
+}
+
+.promo-desc {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    flex-grow: 1;
+}
+
+.promo-prices {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1em;
+}
+
+.new-price {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.promo-terms {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.btn-promo {
+    background: var(--gradient-btn);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+    transition: transform 0.2s;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.3);
+}
+
+.btn-promo:hover {
+    transform: scale(1.05);
+}
+
+/* --- FOOTER --- */
+.footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    padding: 80px 20px 30px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column h3 {
+    color: var(--white);
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-column ul { list-style: none; padding: 0; }
+.footer-column ul li { margin-bottom: 10px; }
+.footer-column ul li a { color: #bbb; display: block; }
+.footer-column ul li a:hover { color: var(--primary-color); padding-left: 5px; }
+.footer-social a { font-size: 1.5em; margin-right: 15px; color: white; }
+.footer-bottom { border-top: 1px solid #333; margin-top: 20px; padding-top: 30px; text-align: center; }
+
+/* --- BOTÓN WHATSAPP --- */
+.float {
+    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+    background-color: #25d366; color: #FFF; border-radius: 50%;
+    text-align: center; font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999; display: flex; align-items: center; justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* =========================================
+   --- RESPONSIVE "ESTILO PC MINIATURA" --- 
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Header y Menú Horizontal (Como en PC pero pequeño) */
+    .header-top { padding: 10px 5px; }
+    
+    .header-top nav {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center;
+        gap: 5px; 
+        font-size: 0; /* Oculta las barras | */
+    }
+
+    .header-top .header-logo {
+        height: 40px; 
+        margin-right: 0;
+        margin-bottom: 5px;
+        display: block; width: 100%; object-fit: contain;
+    }
+
+    .header-top nav a {
+        font-size: 11px;
+        margin-left: 2px; margin-right: 2px;
+        font-weight: 600; padding-bottom: 2px;
+        display: inline-block;
+        border-bottom: none;
+    }
+    
+    .header-top nav a::after { display: none; }
+
+    /* 2. Ajustes Promociones Móvil */
+    .hero-section {
+        flex-direction: column; 
+        padding: 30px 15px;
+        text-align: center;
+    }
+    .hero-content h1 { font-size: 2em; }
+    
+    .promo-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+    .promo-card { max-width: 400px; margin: 0 auto; }
+
+    /* 3. Footer y Botones */
+    .footer-content { flex-direction: column; text-align: center; gap: 30px; }
+    .float { width: 50px; height: 50px; font-size: 24px; bottom: 15px; right: 15px; }
+}

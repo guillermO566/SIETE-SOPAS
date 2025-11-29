@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siete Sopas - Locales</title>
+    <link rel="stylesheet" href="index.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header-top">
+        <nav>
+            <img src="imagenes/logo.png" alt="Logo Siete Sopas" class="header-logo">
+            <a href="index.html">Inicio</a> |
+            <a href="carta.html">Nuestra Carta</a> |
+            <a href="#">Promociones</a>
+            <a href="historia.html">Nuestro Historia</a> |
+            <a href="locales.html" class="active">Locales</a> | 
+            <a href="#">Contáctanos</a>
+        </nav>
+    </header>
+
+    <section class="hero-section" style="min-height: 40vh; flex-direction: column; text-align: center; gap: 20px;">
+        <div class="hero-content" style="padding: 0; text-align: center;">
+            <h1>Nuestros Locales</h1>
+            <p>Selecciona tu sede más cercana para ver su ubicación.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MAPA INTERACTIVO -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-card">
+                
+                <!-- SELECTOR DE SEDES -->
+                <div class="sede-selector-container">
+                    <label for="sedeSelect">Elige una sede:</label>
+                    <select id="sedeSelect" onchange="cambiarSede()">
+                        <option value="sjl">Sede SJL (San Juan de Lurigancho)</option>
+                        <option value="miraflores">Sede Miraflores</option>
+                        <option value="lince">Sede Lince</option>
+                        <option value="surquillo">Sede Surquillo</option>
+                        <option value="gamarra">Sede Gamarra (La Victoria)</option>
+                        <option value="norte">Sede Independencia (Plaza Norte)</option>
+                        <option value="surco">Sede Surco</option>
+                        <option value="santa_anita">Sede Santa Anita (Mall Aventura)</option>
+                    </select>
+                </div>
+
+                <!-- INFORMACIÓN DINÁMICA -->
+                <div class="map-info">
+                    <h3 id="tituloSede">Siete Sopas - Sede SJL</h3>
+                    <p><i class="fa fa-map-marker" style="color: #D35400;"></i> <span id="direccionSede">Av. Próceres de la Independencia 1754, SJL</span></p>
+                    <p><i class="fa fa-clock-o" style="color: #D35400;"></i> Abierto 24 Horas</p>
+                </div>
+                
+                <!-- MAPA DINÁMICO -->
+                <div class="map-responsive">
+                    <iframe id="mapaIframe" src="https://maps.google.com/maps?q=Siete%20Sopas%20SJL%20Proceres&t=&z=16&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <!-- BOTÓN DINÁMICO -->
+                <div class="map-actions" style="margin-top: 20px; text-align: center;">
+                    <!-- Enlace corregido para SJL por defecto -->
+                    <a id="botonComoLlegar" href="https://www.google.com/maps/search/?api=1&query=Siete+Sopas+SJL" target="_blank">
+                        <button style="background: linear-gradient(45deg, #D35400, #E67E22); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-weight: bold; cursor: pointer;">
+                            Cómo llegar
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column footer-logo">
+                <img src="imagenes/logo.png" alt="Logo Footer">
+                <ul class="footer-social-list" style="list-style: none; padding: 0;"> 
+                    <li class="footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-tiktok"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="carta.html">Carta</a></li>
+                    <li><a href="locales.html">Locales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 Siete Sopas</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://api.whatsapp.com/send?phone=51935159305&text=Hola Quisiera informacion sobre este plato." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+    <!-- CSS EXTRA -->
+    <style>
+        .map-section { padding: 60px 20px; background-color: var(--white); }
+        .map-card { background-color: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); padding: 40px; max-width: 900px; margin: 0 auto; border: 1px solid rgba(0,0,0,0.05); }
+        .map-info { text-align: center; margin-bottom: 20px; }
+        .map-info h3 { font-size: 2em; color: #D35400; margin-top: 10px; }
+        .map-info p { font-size: 1.2em; color: #555; margin-bottom: 5px; }
+        .map-responsive { overflow: hidden; padding-bottom: 56.25%; position: relative; height: 0; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .map-responsive iframe { left: 0; top: 0; height: 100%; width: 100%; position: absolute; }
+        .sede-selector-container { text-align: center; margin-bottom: 30px; }
+        .sede-selector-container label { font-size: 1.1em; margin-right: 10px; font-weight: bold; color: #555; }
+        #sedeSelect { padding: 10px 20px; font-size: 1em; border-radius: 50px; border: 2px solid #D35400; background-color: #fff; color: #333; outline: none; cursor: pointer; transition: all 0.3s ease; }
+        #sedeSelect:hover { background-color: #FFF8E1; }
+    </style>
+
+    <!-- JAVASCRIPT CON ENLACES REALES CORREGIDOS -->
+    <script>
+        const sedesData = {
+            'sjl': {
+                titulo: 'Siete Sopas - Sede SJL',
+                direccion: 'Av. Próceres de la Independencia 1754, SJL',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20SJL%20Proceres&t=&z=16&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+SJL' // Enlace Real
+            },
+            'miraflores': {
+                titulo: 'Siete Sopas - Sede Miraflores',
+                direccion: 'Av. Petit Thouars 5541, Miraflores',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20Miraflores%20Petit%20Thouars&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+Miraflores' // Enlace Real
+            },
+            'lince': {
+                titulo: 'Siete Sopas - Sede Lince',
+                direccion: 'Av. Arequipa 2394, Lince',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20Lince%20Arequipa&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+Lince' // Enlace Real
+            },
+            'surquillo': {
+                titulo: 'Siete Sopas - Sede Surquillo',
+                direccion: 'Av. Angamos Este 609, Surquillo',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20Surquillo%20Angamos&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+Surquillo' // Enlace Real
+            },
+            'gamarra': {
+                titulo: 'Siete Sopas - Sede Gamarra',
+                direccion: 'C.C. Parque Cánepa (Cruce Jr. Gamarra y Jr. Unanue), La Victoria',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20Parque%20Canepa%20Gamarra&t=&z=16&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+Gamarra' // Enlace Real
+            },
+            'norte': {
+                titulo: 'Siete Sopas - Sede Plaza Norte',
+                direccion: 'C.C. Plaza Norte (Av. Alfredo Mendiola 1400), Independencia',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20Plaza%20Norte&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+Plaza+Norte' // Enlace Real
+            },
+            'surco': {
+                titulo: 'Siete Sopas - Sede Surco',
+                direccion: 'Av. Santiago de Surco 658, Surco',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20Av%20Santiago%20de%20Surco%20658&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+Surco' // Enlace Real
+            },
+            'santa_anita': {
+                titulo: 'Siete Sopas - Sede Santa Anita',
+                direccion: 'Mall Aventura Santa Anita (Av. Nicolás Ayllón)',
+                mapSrc: 'https://maps.google.com/maps?q=Siete%20Sopas%20Mall%20Aventura%20Santa%20Anita&t=&z=15&ie=UTF8&iwloc=&output=embed',
+                link: 'https://www.google.com/maps/search/?api=1&query=Siete+Sopas+Santa+Anita' // Enlace Real
+            }
+        };
+
+        function cambiarSede() {
+            var selector = document.getElementById("sedeSelect");
+            var sedeSeleccionada = selector.value;
+            var info = sedesData[sedeSeleccionada];
+
+            var titulo = document.getElementById("tituloSede");
+            titulo.innerText = info.titulo;
+            titulo.style.animation = 'none';
+            titulo.offsetHeight; /* reinicia animación */
+            titulo.style.animation = 'fadeIn 0.5s';
+            
+            document.getElementById("direccionSede").innerText = info.direccion;
+            document.getElementById("mapaIframe").src = info.mapSrc;
+            document.getElementById("botonComoLlegar").href = info.link;
+        }
+    </script>
+
+</body>
+</html>
